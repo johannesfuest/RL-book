@@ -36,7 +36,7 @@ def approximate_policy_iteration(
         it = evaluate_mrp(mrp, y, v[0], non_terminal_states_distribution, num_state_samples)
         V_0 = next(it)
         V_1 = next(it)
-        while not V_0.within(V_1, 0.01):
+        while not V_0.within(V_1, 0.1):
             V_0 = V_1
             V_1 = next(it)
 
